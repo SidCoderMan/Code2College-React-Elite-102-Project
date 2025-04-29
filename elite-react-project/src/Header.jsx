@@ -1,8 +1,10 @@
+import "./App.css";
+
 function Header(){
     return(
 
-        <header>
-            <h1>Food Movie Matchup</h1>
+        <header className = "header">
+            <h1 className="bigtext">Food Movie Matchup</h1>
 
 
         </header>

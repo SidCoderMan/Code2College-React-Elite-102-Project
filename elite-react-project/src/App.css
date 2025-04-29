@@ -1,25 +1,115 @@
 .container {
-  background-color: red;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 1200px; 
+  margin: 0 auto;    
+  padding: 20px 40px; 
+  background-color: #f9f9f9; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  display: flex;           
+  justify-content: center;  
+  align-items: center;     
+  flex-direction: column;
   
 }
 
 
-.button{
-  width: 10rem;
-  border-radius: 10px;
-  border-color: blue;
-  border-style:solid;
-  background-color: lightblue;
-  color: darkcyan;
-
-
-
+.button {
+  background-color: #ffffff; 
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.button:hover {
+  background-color: #6c8de5; /* darker green on hover */
+  transform: translateY(-2px); /* little lift */
+}
+
+.button:active {
+  background-color: #6c8de5;
+  transform: translateY(0); /* push down on click */
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #1e1e1e; /* dark header */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.footerino{
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: white;
+  font-size: 14px;
+  border-top: 2px solid #555;
+
+}
+.text{
+  font-family: 'Inter', 'Helvetica Neue', sans-serif; 
+  color: #333333;  
+  line-height: 1.6; 
+  font-size: 18px;
+  letter-spacing: 0.5px; 
+  padding: 20px;
+  
+}
+
+
+.bigtext{
+  font-family: 'Inter', 'Helvetica Neue Bold', sans-serif; 
+  color: white;  
+  line-height: 1.6; 
+  font-size: 18px;
+  letter-spacing: 0.5px; 
+  padding: 20px;
+}
+.text1{
+  font-family: 'Inter', 'Helvetica Neue', sans-serif; 
+  color: #ffffff;  
+  line-height: 1.6; 
+  font-size: 18px;
+  letter-spacing: 0.5px; 
+  padding: 20px;
+  
+}
+.hero {
+  height: 50vh; /* full screen height */
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  justify-content: center; /* center vertically */
+  align-items: center; /* center horizontally */
+  background: linear-gradient(135deg, #6C63FF, #63B3ED); /* nice diagonal gradient */
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
 button:hover {
   background-color: darkslategray;
 }
