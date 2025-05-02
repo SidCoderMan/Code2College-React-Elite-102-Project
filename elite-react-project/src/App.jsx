@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, use} from "react";
 import Header from "./Header.jsx";
 import Hero from "./Hero.jsx";
 import Button from "./Button.jsx";
@@ -10,8 +10,9 @@ const tmdbKey = "https://api.themoviedb.org/3/movie/popular?api_key=9369ac197249
 
 function App() {
     const [movie, setMovie] = useState("No movie");
+    const [movieImage, setMovieImage] = useState(null);
     const [food, setFood] = useState("No food");
-
+    const [foodImage, setFoodImage] = useState(null);
     async function getFood(){
     try {
         
@@ -21,7 +22,7 @@ function App() {
             setFood(json.businesses[randomIndex].name);
             console.log(json.businesses);
             const foodUrl = json.businesses[randomIndex].image_url;
-            document.getElementById("foodImage").src = foodUrl;
+            setFoodImage(foodUrl);
         })
       } catch (error) {
         console.error(error);
@@ -37,7 +38,7 @@ function App() {
             setMovie(json.results[randomIndex].original_title);
             const posterPath = json.results[randomIndex].poster_path;
             const posterUrl = `https://image.tmdb.org/t/p/w500${posterPath}`;
-            document.getElementById("movieImage").src = posterUrl;
+            setMovieImage(posterUrl);
         })
       } catch (error) {
         console.error(error);
@@ -58,11 +59,15 @@ function App() {
     <Header />
     <Hero />
     <div className = "container">
-      <div className = "content">
+      <div className = "content-wrapper">
+        <div className = "item-wrapper">
         <p className = "text"> Restaurant: {food}</p>
-        <img id="foodImage" alt="Restaurant" width={250} height={200}></img>
+        {foodImage && <img src = {foodImage} id="foodImage" alt="Food"></img>}
+        </div>
+        <div className = "item-wrapper">
         <p className = "text"> Movie: {movie}</p>
-        <img id="movieImage" alt="Movie" width={250} height={200}></img>
+        {movieImage && <img src = {movieImage} id="movieImage" alt="Movie"  ></img>}
+        </div>
       </div>
     <Button handleClick = {handleClick}></Button>
       
